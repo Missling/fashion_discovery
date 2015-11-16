@@ -21,7 +21,7 @@
 * To start web server, run $rails server 
 * To see application in action, open a browser window and navigate to http://localhost:3000
 
-## Deploying to Heroku
+## Heroku Deployment Instructions
 ----
 
 
