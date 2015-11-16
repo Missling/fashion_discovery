@@ -33,7 +33,7 @@ body {
 
 .header {
   text-align: center;
-  padding-bottom: 50px;
+  margin-top: 0;
 }
 
 h1 {
@@ -60,6 +60,16 @@ h3 {
   padding-right: 5%;
   font-size: 14px;
   font-style: italic; 
+}
+
+footer {
+  background-color: #00191a;
+  color: #fff2e5;
+  padding: 2px;
+}
+
+footer a {
+  color: white;
 }
 
 

@@ -17,7 +17,7 @@
           <% truncated_blurb = content.blurb.split(" ")[0..31].join(" ") %>
           <p class="blurb"><%= truncated_blurb %></p>
           <p class="bold">From: <%= content.author %></p>
-          <p class="detail">Read more at <a href=<%= content.details_url %>><%= content.details_url %></a>
+          <p class="detail">Read more at <a href=<%= content.details_url %> target="_blank" ><%= content.details_url %></a>
         </div>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
 
   <footer>
     <p>Created By <strong>Ling Giang 2015</strong></p>
-    <p>You can review my code at <a href='https://github.com/Missling/fashion_discovery'>Github</a></p>
+    <p>You can review my code at <a href='https://github.com/Missling/fashion_discovery' target="_blank">Github</a></p>
   </footer>
 
   <script id="entry-template" type="text/x-handlebars-template">
@@ -34,7 +34,7 @@
       <img src= {{thumbnail_url}} alt="Image">
       <p class="blurb">{{blurb}}</p>
       <p>From: {{author}}</p>
-      <p class="detail">Read more at <a href={{details_url}}>{{details_url}}</a>.</p>
+      <p class="detail">Read more at <a href={{details_url}} target="_blank">{{details_url}}</a>.</p>
     </div>
   </script>
 </html>
