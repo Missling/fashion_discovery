@@ -1,4 +1,34 @@
-== README
+### Fashion Discovery
+
+## Fashion Discovery is a web application that delivers fashion content to users.
+
+## Outline
+----
+* Current data are generated from Ruby's Faker Gem. Data are stored in a PostgreSQL database via a seed file.
+* Users are initially shown 20 board items. The randomization of board items is achieved by shuffling the data generated from Ruby's Will_Pagination gem.  
+* Upon scrolling to the bottom of the page, an AJAX call, with page passed in as the parameter, is made to the server for the next 20 items as JSON data. Using Handlebars.js, the new contents are appended to the existing board items. 
+* Each board items have the following structure: title, blurb, author, thumbnail_url, details_url. Title and blurb are trunicated to show 32 words or less.
+* Board items are displayed using Masonry, Javascript grid layout libary.
+* Fashion Discovery is deployed to Heroku at 
+
+## Running Fashion Discovery on local development
+----
+* Navigate to fashion_discovery directory
+* Run $bundle install to install Ruby gems 
+* Run $rake db:create to create database
+* Run $rake db:migrate to migrate database
+* Run $rake db:seed to seed database
+* To start web server, run $rails server 
+* To see application in action, open a browser window and navigate to http://localhost:3000
+
+## Deploying to Heroku
+----
+
+
+
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -24,5 +54,3 @@ Things you may want to cover:
 * ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
