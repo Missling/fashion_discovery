@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FASHION DISCOVERY</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <img src="/assets/runway.jpeg" alt="New York City" height="400px" width="100%">
+      <h1>FASHION DISCOVERY</h1>
+    <div>
+    <div class="posts grid">
+      <% @contents.each do |content| %>
+        <div class="post grid-item">
+          <h3><%= content.title %></h3>
+          <img src=<%= content.thumbnail_url %> alt="Image">
+          <% truncated_blurb = content.blurb.split(" ")[0..31].join(" ") %>
+          <p class="blurb"><%= truncated_blurb %></p>
+          <p class="bold">From: <%= content.author %></p>
+          <p class="detail">Read more at <a href=<%= content.details_url %>><%= content.details_url %></a>
+        </div>
+      <% end %>
+    </div>
+  </body>
+
+  <footer>
+    <p>Created By <strong>Ling Giang 2015</strong></p>
+    <p>You can review my code at <a href='https://github.com/Missling/fashion_discovery'>Github</a></p>
+  </footer>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="post grid-item">
+      <h3>{{title}}</h3>
+      <img src= {{thumbnail_url}} alt="Image">
+      <p class="blurb">{{blurb}}</p>
+      <p>From: {{author}}</p>
+      <p class="detail">Read more at <a href={{details_url}}>{{details_url}}</a>.</p>
+    </div>
+  </script>
+</html>
