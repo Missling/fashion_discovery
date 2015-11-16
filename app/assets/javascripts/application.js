@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require handlebars-v4.0.4
+//= require masonry.pkgd.min.js

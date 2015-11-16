@@ -1,6 +1,11 @@
 $(document).ready(function(){
   var next_page = 2;
 
+  $('.grid').masonry({
+            itemSelector: '.grid-item',
+            columnWidth: 200,
+          });
+
   $(window).scroll(function(){
     if (bottomOfPage()){
       var ajaxRequest = $.ajax({
@@ -15,7 +20,12 @@ $(document).ready(function(){
         var template = Handlebars.compile(source);
 
         response.forEach(function(content){
-          $('.post').last().append(template(content))
+          // $('.post').last().append(template(content))
+          // $(".grid").append(template(content)).masonry( 'reload' );
+          $( '.grid' ).append( template(content) );
+          $( '.grid' ).masonry( 'layout' );
+          $( '.grid' ).masonry( 'reloadItems' );
+       
         })
       });
     };
@@ -24,7 +34,9 @@ $(document).ready(function(){
   var bottomOfPage = function(){
     return $(window).scrollTop() === $(document).height() - $(window).height()
   }
-});      
+});
+
+     
 
     
  
