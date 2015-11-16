@@ -2,10 +2,11 @@
   <% @contents.each do |content| %>
     <div class="post grid-item">
       <p><%= content.id %></p>
-      <p><%= content.title %></p>
-      <p><%= content.blurb %></p>
-      <p><%= content.author %></p>
+      <h3><%= content.title %></h3>
       <img src=<%= content.thumbnail_url %> alt="Image">
+      <% truncated_blurb = content.blurb.split(" ")[0..31].join(" ") %>
+      <p><%= truncated_blurb %></p>
+      <p>From: <%= content.author %></p>
       <p><%= content.details_url %></p>
     </div>
   <% end %>
@@ -14,10 +15,10 @@
 <script id="entry-template" type="text/x-handlebars-template">
   <div class="post grid-item">
     <p>{{id}}</p>
-    <p>{{title}}</p>
-    <p>{{blurb}}</p>
-    <p>{{author}}</p>
+    <h3>{{title}}</h3>
     <img src= {{thumbnail_url}} alt="Image">
+    <p>{{blurb}}</p>
+    <p>From: {{author}}</p>
     <p>{{details_url}}</p>
   </div>
 </script>

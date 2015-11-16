@@ -20,12 +20,15 @@ $(document).ready(function(){
         var template = Handlebars.compile(source);
 
         response.forEach(function(content){
-          // $('.post').last().append(template(content))
-          // $(".grid").append(template(content)).masonry( 'reload' );
-          $( '.grid' ).append( template(content) );
-          $( '.grid' ).masonry( 'layout' );
-          $( '.grid' ).masonry( 'reloadItems' );
-       
+
+          var truncatedBlurb = content.blurb.split(" ").slice(0,32).join(" ");
+
+          content.blurb = truncatedBlurb
+
+          $('.grid').append(template(content));
+          debugger
+          $('.grid').masonry('layout');
+          $('.grid').masonry('reloadItems');  
         })
       });
     };
