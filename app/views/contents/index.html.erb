@@ -1,0 +1,23 @@
+<div class="posts">
+  <% @contents.each do |content| %>
+    <div class="post">
+      <p><%= content.id %></p>
+      <p><%= content.title %></p>
+      <p><%= content.blurb %></p>
+      <p><%= content.author %></p>
+      <p><%= content.thumbnail_url %></p>
+      <p><%= content.details_url %></p>
+    </div>
+  <% end %>
+</div>
+
+<script id="entry-template" type="text/x-handlebars-template">
+  <div class="post">
+    <p>{{id}}</p>
+    <p>{{title}}</p>
+    <p>{{blurb}}</p>
+    <p>{{author}}</p>
+    <p>{{thumbnail_url}}</p>
+    <p>{{details_url}}</p>
+  </div>
+</script>
