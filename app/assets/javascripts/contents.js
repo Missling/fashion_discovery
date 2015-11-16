@@ -2,9 +2,10 @@ $(document).ready(function(){
   var next_page = 2;
 
   $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: 200,
-          });
+    itemSelector: '.grid-item',
+    columnWidth: 200,
+    isFitWidth: true
+  });
 
   $(window).scroll(function(){
     if (bottomOfPage()){
@@ -21,12 +22,10 @@ $(document).ready(function(){
 
         response.forEach(function(content){
 
-          var truncatedBlurb = content.blurb.split(" ").slice(0,32).join(" ");
-
-          content.blurb = truncatedBlurb
+          content.title = truncated(content.title);
+          content.blurb = truncated(content.blurb);
 
           $('.grid').append(template(content));
-          debugger
           $('.grid').masonry('layout');
           $('.grid').masonry('reloadItems');  
         })
@@ -36,7 +35,21 @@ $(document).ready(function(){
 
   var bottomOfPage = function(){
     return $(window).scrollTop() === $(document).height() - $(window).height()
-  }
+  };
+
+  var truncated = function(text){
+    return text.split(" ").slice(0,32).join(" ");
+  };
+
+  $('.posts').on('hover', '.post', function() {
+    $(this).css(
+      "box-shadow", "10px 10px 10px #888"
+    );
+  }, function() {
+    $(this).css(
+      "box-shadow", "5px 5px 5px #888888"
+    );
+  });
 });
 
      
