@@ -26,8 +26,8 @@ $(document).ready(function(){
           content.blurb = truncated(content.blurb);
 
           $('.grid').append(template(content));
-          $('.grid').masonry('layout');
           $('.grid').masonry('reloadItems');  
+          $('.grid').masonry('layout');
         })
       });
     };
@@ -41,14 +41,10 @@ $(document).ready(function(){
     return text.split(" ").slice(0,32).join(" ");
   };
 
-  $('.posts').on('hover', '.post', function() {
-    $(this).css(
-      "box-shadow", "10px 10px 10px #888"
-    );
-  }, function() {
-    $(this).css(
-      "box-shadow", "5px 5px 5px #888888"
-    );
+  $('.posts').on('mouseenter', '.post', function() {
+    $(this).addClass("hover");
+  }).on('mouseleave', '.post', function() {
+    $(this).removeClass("hover");
   });
 });
 
