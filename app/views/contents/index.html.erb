@@ -17,7 +17,7 @@
           <% truncated_blurb = content.blurb.split(" ")[0..31].join(" ") %>
           <p class="blurb"><%= truncated_blurb %></p>
           <p class="bold">From: <%= content.author %></p>
-          <p class="detail">Read more at <a href=<%= content.details_url %> target="_blank" ><%= content.details_url %></a>
+          <p class="detail">Read more at <a href=<%= content.details_url %> target="_blank"><%= content.details_url %></a>
         </div>
       <% end %>
     </div>

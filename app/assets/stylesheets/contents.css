@@ -9,6 +9,11 @@
   padding-bottom: 10px;
 }
 
+.post.hover {
+  box-shadow: "10px 10px 10px #888";
+  border: 3px solid black;
+}
+
 .grid-item { 
   width: 20em; 
   margin-bottom: 2em;
@@ -42,6 +47,7 @@ h1 {
   font-variant: small-caps;
   background-color: black;
   color: #ffcc99;
+  margin-top: 0px;
 }
 
 h3 {
