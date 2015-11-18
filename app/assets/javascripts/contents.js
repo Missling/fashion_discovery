@@ -34,11 +34,11 @@ $(document).ready(function(){
   });
 
   var bottomOfPage = function(){
-    return $(window).scrollTop() === $(document).height() - $(window).height()
+    return $(window).scrollTop() === $(document).height() - $(window).height();
   };
 
   var truncated = function(text){
-    return text.split(" ").slice(0,32).join(" ");
+    return text.split(" ").slice(0, 32).join(" ");
   };
 
   $('.posts').on('mouseenter', '.post', function() {

@@ -1,56 +1,33 @@
-### Fashion Discovery
+# Fashion Discovery
 
-## Fashion Discovery is a web application that delivers fashion content to users.
+Fashion Discovery is a web application that delivers fashion content to users.
 
 ## Outline
-----
-* Current data are generated from Ruby's Faker Gem. Data are stored in a PostgreSQL database via a seed file.
-* Users are initially shown 20 board items. The randomization of board items is achieved by shuffling the data generated from Ruby's Will_Pagination gem.  
-* Upon scrolling to the bottom of the page, an AJAX call, with page passed in as the parameter, is made to the server for the next 20 items as JSON data. Using Handlebars.js, the new contents are appended to the existing board items. 
-* Each board items have the following structure: title, blurb, author, thumbnail_url, details_url. Title and blurb are trunicated to show 32 words or less.
-* Board items are displayed using Masonry, Javascript grid layout libary.
-* Fashion Discovery is deployed to Heroku at 
 
-## Running Fashion Discovery on local development
-----
+* Current data is generated from the `Faker` gem. Data is imported into a PostgreSQL database via a seed file.
+* Users are initially shown 20 board items. The randomization of board items is achieved by shuffling the data retrieved from Ruby's `will_pagination` gem.  
+* Upon scrolling to the bottom of the page, an AJAX call is made to the server for the next 20 items as JSON data, passing the page as the parameter. Using `Handlebars.js`, the new contents are appended to the existing board items. 
+* Each board items have the following structure: title, blurb, author, thumbnail_url, details_url. Title and blurb are truncated to show 32 words or less.
+* Board items are displayed using the Masonry Javascript grid layout libary.
+* Fashion Discovery is deployed to Heroku at https://desolate-chamber-1314.herokuapp.com
+
+## Running Fashion Discovery on Local Development
+
 * Navigate to fashion_discovery directory
-* Run $bundle install to install Ruby gems 
-* Run $rake db:create to create database
-* Run $rake db:migrate to migrate database
-* Run $rake db:seed to seed database
-* To start web server, run $rails server 
-* To see application in action, open a browser window and navigate to http://localhost:3000
+* Run `bundle install` to install the Ruby gems
+* Run `rake db:create` to create the database
+* Run `rake db:migrate` to run the database migrations
+* Run `rake db:seed` to import the development data
+* Run `rails server` to start the web server
+* To see application in action, open browser window and navigate to http://localhost:3000
 
 ## Heroku Deployment Instructions
-----
 
-
-
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+* Run `heroku create` to create new application on Heroku
+* Run `git remote -v` to verify that heroku was added
+* Run `git push heroku master` to deploy code
+* Run `heroku addons:create heroku-postgresql:hobby-dev` to create database
+* Run `heroku run rake db:create`
+* Run `heroku run rake db:migrate`
+* Run `heroku run rake db:seed`
+* Run `heroku open`

@@ -6,7 +6,7 @@ class ContentsController < ApplicationController
     respond_to do |format|
       format.html
       format.json{
-        render :json => @contents.to_json
+        render json: @contents
       }
     end
   end
